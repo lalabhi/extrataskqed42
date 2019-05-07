@@ -1,0 +1,7 @@
+name: Extra Module
+type: module
+description: module for the extra activity
+core: 8.x
+dependencies:
+  - migrate_tools
+  - migrate_plus

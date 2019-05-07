@@ -1,0 +1,30 @@
+uuid: 17b8c699-b10e-4b19-a690-bf10edb877ac
+id: article
+label: 'import categories from XML'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: xml
+  urls: public://categories.xml
+  item_selector: /categories/category
+  fields:
+    -
+      name: term_name
+      label: 'Name'
+      selector: name
+    -
+      name: id
+      label: 'ID'
+      selector: id
+  ids:
+    id:
+      type: integer
+process:
+  name: term_name
+  vid:
+    plugin: default_value
+    default_value: article
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: article
+migration_dependencies: {}

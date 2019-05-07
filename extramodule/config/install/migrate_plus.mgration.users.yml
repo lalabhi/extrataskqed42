@@ -1,0 +1,30 @@
+id: custom_user_migration
+label: Custom user migration
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: xml
+  urls: public://users.xml
+  item_selector: /users/user
+  fields:
+    -
+      name: user_name
+      label: 'Name'
+      selector: name
+    -
+      name: user_id
+      label: 'ID'
+      selector: id
+    -
+      name: user_email
+      label: 'email'
+      selector: email
+  ids:
+    user_id:
+      type: integer
+process:
+  name: user_name
+  mail: user_email
+destination:
+  plugin: entity:user
+
