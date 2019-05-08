@@ -1,0 +1,6 @@
+services:
+  config_name:
+    class: Drupal\extramodule\ParamConverter\ExtramoduleParamConverter
+    arguments: ['@config.factory']
+    tags:
+      - { name: paramconverter }

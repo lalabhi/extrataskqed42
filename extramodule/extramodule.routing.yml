@@ -1,0 +1,29 @@
+extramodule.url_arguments:
+  path: 'extramodule/arg-demo/{arg1}'
+  defaults:
+    _title: 'URL Arguments'
+    _controller: '\Drupal\extramodule\Controller\UrlController::urlArgument'
+    arg1: ''
+  requirements:
+    _access: 'TRUE'
+
+extramodule.url_node_arguments:
+  path: 'extramodule/node-demo/{node}'
+  defaults:
+    _title: 'URL Arguments'
+    _controller: '\Drupal\extramodule\Controller\UrlController::urlNodeArgument'
+  requirements:
+    _access: 'TRUE'
+
+extramodule.config_arguments:
+  path: 'extramodule/upcast/{config_name}'
+  defaults:
+    _title: 'URL Arguments'
+    _controller: '\Drupal\extramodule\Controller\UrlController::urlconfigArgument'
+  requirements:
+    _access: 'TRUE'
+  options:
+    parameters:
+      config_name:
+        type: config_name
+
